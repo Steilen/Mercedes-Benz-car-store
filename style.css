@@ -1,0 +1,963 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    height: 150px;
+    background-color: #000000;
+    position: relative;
+    width: 100%;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top: 95px;
+    left: 0;
+    width: 100%;
+    height: 0.5px;
+    background-color: #ffffff1c;
+}
+
+.logo {
+    position: absolute;
+    top: 50px;
+    left: 110px;
+    transform: translateY(-50%);
+    width: 65px;
+}
+
+.logotext {
+    position: absolute;
+    top: 70px;
+    left: 180px;
+    transform: translateY(-50%);
+    width: 300px;
+}
+
+.navbar {
+    position: absolute;
+    top: 113px;
+    left: 135px;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: #cacaca;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ffffff;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: -18px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #007bff91;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.navbar a:hover::before {
+    opacity: 1;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 50px;
+    left: -30px;
+    width: 350px;
+    height: 480px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease; /* Плавные переходы */
+
+    padding-top: 20px; /* Сдвиг вниз */
+}
+
+.model-range:hover + .dropdown-content,
+.dropdown-content:hover {
+    opacity: 1; /* Показываем элемент */
+    visibility: visible; /* Делаем его видимым */
+    transform: translateY(0); /* Возвращаем на место */
+}
+
+.model-range:hover + .dropdown-content {
+    pointer-events: auto; /* Активируем, чтобы div не скрывался при уходе с текста на сам div */
+}
+
+.carimg {
+    width: 20px;
+    position: absolute;
+    left: -24px;
+}
+
+.main-sectionvip {
+    height: 720px;
+    background: 
+        linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+        linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
+        url('img/bs1.jpg');
+    background-size: cover;
+    background-position: top;
+    background-blend-mode: multiply;
+    color: #fff;
+    display: flex;
+    justify-content: flex-start; /* Изменено для выравнивания по левому краю */
+    align-items: center; /* Оставляем для вертикального центрирования */
+    text-align: left; /* Выравнивание текста по левому краю */
+    padding-left: 50px; /* Добавьте отступ слева, чтобы задать нужное пространство */
+    
+}
+
+body {
+    font-family: sans-serif;
+  }
+  
+  .containervip {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .containervip > li {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .containervip > li:first-child {
+    border-radius: 5px 0 0 5px;
+    background-color: #555;
+    color: white;
+  }
+  
+  .containervip > li:last-child {
+    border-radius: 0 5px 5px 0;
+  }
+
+.title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.subtitle {
+    font-size: 18px;
+    margin-bottom: 32px;
+}
+
+.buttons {
+    display: flex; /* Центрируем кнопки */
+}
+
+.btn {
+    padding: 15px 29px;
+    margin: 0 8px;
+    border-radius: 25px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #0d82db;
+    color: #fff;
+    transition: background 0.4s ease;
+}
+
+.btn-primary {
+    background-color: #008fff;
+}
+
+.btn-secondary {
+    background: linear-gradient(45deg, #6c757d00, #9a9da200);
+    border: 0.1px solid #ffffff3b;
+}
+
+/* Анимация при наведении */
+.btn:hover {
+    background: #0569b6;
+	transition: background 0.5s ease;
+}
+
+.btn-secondary:hover {
+    background: #303030b9;
+	transition: background 0.5s ease;
+}
+
+.containervip {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-left: 60px;
+}
+
+.row {
+    display: flex;
+    justify-content: center; /* Центрируем строки */
+    align-items: center;
+}
+
+.col-md-12 {
+    width: 100%;
+}
+
+
+
+.dropdown-item {
+    padding: 10px 20px;
+    color: #000000; /* Цвет текста */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавный переход цвета и перемещения */
+    border-radius: 10px;
+    width: 300px;
+    margin: 10px auto; /* Центрируем элементы */
+    text-align: left; /* Выравнивание текста по левому краю */
+    position: relative; /* Необходимо для абсолютного позиционирования .extra-info */
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0; /* Серая заливка при наведении */
+    transform: translateX(10px); /* Сдвиг вправо при наведении */
+}
+
+.dropdown-item:hover .extra-info {
+    display: block;
+    animation: fadeIn 0.5s forwards;
+}
+
+.dropdown-item .extra-info {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.extra-info {
+    display: none;
+    position: absolute;
+    left: 360px; /* Позиция справа от списка */
+    top: 0;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    border-radius: 10px; /* Скругленные углы */
+    padding: 10px;
+    z-index: 1000; /* Поверх остальных элементов */
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.dropdown-item:hover .extra-info,
+.extra-info:hover,
+.extra-info:hover ~ .extra-info,
+.dropdown-item:hover ~ .dropdown-item .extra-info:hover {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeIn 0.5s forwards;
+}
+
+/* Убираем div только когда курсор покидает все связанные элементы */
+.dropdown-item:hover ~ .dropdown-item:not(:hover) .extra-info:not(:hover),
+.extra-info:not(:hover) ~ .extra-info:not(:hover) {
+    display: none;
+    animation: fadeOut 0.5s forwards;
+}
+
+/* Новые стили для предотвращения закрытия окон при наведении на дополнительные окна */
+.dropdown-item:hover ~ .dropdown-item .extra-info:hover,
+.extra-info:hover,
+.extra-info:hover .extra-info {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeIn 0.5s forwards;
+}
+
+.extra-info:hover ~ .dropdown-item .extra-info {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeIn 0.5s forwards;
+}
+
+.container {
+    display: flex;
+    max-width: 1060px;
+    height: 50px;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    margin: 20px auto;
+    justify-content: center;
+    position: absolute;
+    top: 950px;
+    left: 430px;
+}
+
+.section {
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: #333;
+    font-size: 15px;
+    padding: 25px;
+    white-space: nowrap;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.section:first-child {
+    border-radius: 20px 0 0 20px;
+}
+
+.section:last-child {
+    border-radius: 0 20px 20px 0;
+}
+
+.section::after {
+    content: '';
+    width: 1px;
+    height: 60%;
+    background-color: #ddd;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.section:last-child::after {
+    display: none;
+}
+
+.section:hover {
+    background-color: #333;
+    color: #ffffff;
+}
+
+.section.active {
+    background-color: #333;
+    color: white;
+}
+
+.contentvip {
+    display: none;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto;
+    max-width: 600px;
+    transition: opacity 0.5s ease;
+    left: 670px;
+    top: 1050px;
+    position: absolute;
+}
+
+.contentvip.active {
+    display: flex;
+    opacity: 1;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border-radius: 8px;
+    
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.card {
+    position: relative;
+    width: 550px;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    background-color: white;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    position: relative;
+    left: 0;
+    object-fit: contain;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-buttons {
+    margin-top: 70px;
+    margin-left: 120px;
+    bottom: 20px;
+    opacity: 0;
+    display: flex;
+    gap: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.card button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.card button:nth-child(1) {
+    background-color: white;
+    color: black;
+}
+
+.card button:nth-child(2) {
+    background-color: #007bff;
+    color: white;
+}
+
+.card button:nth-child(1):hover {
+    background-color: #f0f0f0;
+}
+
+.card button:nth-child(2):hover {
+    background-color: #0056b3;
+}
+
+.card:hover .card-buttons {
+    opacity: 1;
+}
+
+.card-info {
+    bottom: 60px;
+    left: 20px;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    text-align: center;
+    top: 360px;
+    position: absolute;
+    left: 160px;
+}
+
+.card:hover .card-info {
+    transform: translateY(-10px);
+}
+
+.more{
+    text-decoration: none;
+    color: #2d85e2;
+    font-size: 18px;
+    top: 55px;
+    left: 30px;
+    position: absolute;
+    font-weight: 100;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.pvip{
+    color: #00000080; 
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.h1vip{
+    font-weight: 10;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.h2vip{
+    position: absolute;
+    top: 920px;
+    left: 115px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+}
+
+
+
+
+.carousel {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: absolute;
+    top: 1800px;
+    left: 103px;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    position: relative;
+    flex: 0 0 calc(22% - 20px);
+    margin: 0 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 999;
+    width: 180px;
+}
+
+.carousel-slide:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.carousel-slide:hover img {
+    transform: scale(1.1);
+}
+
+.slide-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+    color: #fff;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.carousel-slide:hover .slide-info {
+    transform: translateY(-10px);
+}
+
+.slide-info h3 {
+    margin: 0 0 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.slide-info p {
+    margin: 0 0 10px;
+    font-size: 16px;
+}
+
+.slide-info button {
+    background: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+.slide-info button:hover {
+    background: #0056b3;
+}
+
+.carousel-control {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    transition: background-color 0.3s;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+}
+
+.carousel-control:hover {
+    background-color: #fff;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+.carousel-control img {
+    width: 10px;
+}
+
+.carousel-control.hidden {
+    display: none;
+}
+
+.h34vip{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    top: 1700px;
+    left: 115px;
+    position: absolute;
+}
+
+.h5vip{
+    color: #00000083; 
+    top: 1600px; 
+    left: 110px; 
+    position: absolute;
+}
+
+.G-Classsection{
+    height: 720px;
+    background: 
+        linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+        linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
+        url('img/bs2.png');
+    position: absolute;
+    top: 2400px;
+    width: 100%;
+    height: 100%;
+    background-position: top;
+    background-blend-mode: multiply;
+    color: #fff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    padding-left: 50px;
+}
+
+.pg{
+    font-size: 50px;
+    position: absolute;
+    left: 90px;
+    top: 400px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.h4g{
+    position: absolute;
+    left: 90px;
+    top: 480px;
+    font-weight: 100;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.btng{
+    padding: 15px 29px;
+    margin: 0 8px;
+    border-radius: 25px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #0078d6;
+    color: #fff;
+    transition: background 0.4s ease;
+    position: absolute; 
+    left: 80px; 
+    top: 520px;
+}
+
+.btn-primaryg {
+    background-color: #008fff;
+}
+
+.btng:hover {
+    background: #014880;
+	transition: background 0.5s ease;
+    color: #ebebeb;
+}
+
+.aboutus{
+    width: 1700px;
+    margin-left: 115px;
+    margin-top: 2600px;
+    height: 360px;
+}
+
+.hp{
+    font-size: 50px;
+    color: #242424;
+}
+
+.hp2{
+    font-size: 20px;
+    color: #0000009a;
+}
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 40px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #333;
+}
+
+.footer-section {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.footer-section h4 {
+    color: #00bcd4;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section li {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.footer-bottom ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-bottom li {
+    font-size: 12px;
+    margin-right: 15px;
+    color: #ccc;
+}
+
+.footer-bottom li:last-child {
+    margin-right: 0;
+}
+
+.footer {
+    background-color: #000;
+    padding: 40px 0;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10%;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column h3 {
+    color: #00bcd4;
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: #ccc;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    margin-top: 20px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    font-size: 12px;
+}
+
+.footer-links li {
+    color: #777;
+}
+
+.scroll-up {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.footer {
+    background-color: #000000;
+    color: #ccc;
+    font-family: Arial, sans-serif;
+    padding: 60px 10%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    width: 22%;
+}
+
+.footer-column h4 {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column li {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    text-decoration: none;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer-column a:hover {
+    color: #00bcd4;
+    transform: translateX(5px);
+}
+
+.icon {
+    font-size: 10px;
+    color: #00bcd4;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    margin-top: 30px;
+    padding-top: 15px;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    padding-left: 0;
+}
+
+.footer-links li {
+    font-size: 12px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #777;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #00bcd4;
+}
